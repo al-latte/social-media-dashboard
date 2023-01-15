@@ -1,0 +1,354 @@
+/* Reset */
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	transition: all ease-in-out 1s;
+}
+
+/* Color Variables */
+
+:root {
+	/* Primary */
+	--limeGreen: hsl(163, 72%, 41%);
+	--brightRed: hsl(356, 69%, 56%);
+
+	--Facebook: hsl(208, 92%, 53%);
+	--Twitter: hsl(203, 89%, 53%);
+	--Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+	--YouTube: hsl(348, 97%, 39%);
+
+	/* Dark Theme */
+	--toggleDark: linear-gradient(
+		to right,
+		hsl(210, 78%, 56%),
+		hsl(146, 68%, 55%)
+	);
+
+	--veryDarkBlueBG: hsl(230, 17%, 14%);
+	--VeryDarkBlueTopBGPattern: hsl(232, 19%, 15%);
+	--DarkDesaturatedBlueCardBG: hsl(228, 28%, 20%);
+	--DesaturatedBlueText: hsl(228, 34%, 66%);
+	--WhiteText: hsl(0, 0%, 100%);
+
+	/* Light Theme */
+	--toggleLight: hsl(230, 22%, 74%);
+
+	--WhiteBG: hsl(0, 0%, 100%);
+	--VeryPaleBlueTopBGPattern: hsl(225, 100%, 98%);
+	--LightGrayishBlueCardBG: hsl(227, 47%, 96%);
+	--DarkGrayishBlueText: hsl(228, 12%, 44%);
+	--VeryDarkBlueText: hsl(230, 17%, 14%);
+}
+
+/* light theme */
+.lightMode {
+	background-color: var(--WhiteBG);
+}
+
+.bigcard-light:hover,
+.smallCard-light:hover {
+	background-color: #e1e3f0;
+}
+
+.bigcard-light {
+	background-color: var(--LightGrayishBlueCardBG);
+}
+.smallCard-light {
+	background-color: var(--LightGrayishBlueCardBG);
+}
+
+.lightModeText {
+	color: var(--DarkGrayishBlueText);
+}
+
+.textLight {
+	color: black;
+}
+
+.toggleDiv-light {
+	background: var(--toggleLight);
+	justify-content: flex-end;
+}
+
+.toggle-light {
+	background-color: var(--WhiteBG);
+}
+
+/* dark theme */
+.darkMode {
+	background-color: var(--veryDarkBlueBG);
+}
+.bigcard-dark:hover,
+.smallCard-dark:hover {
+	background-color: #333a56;
+}
+
+.bigcard-dark {
+	background-color: var(--DarkDesaturatedBlueCardBG);
+}
+.smallCard-dark {
+	background-color: var(--DarkDesaturatedBlueCardBG);
+}
+
+.darkModeText {
+	color: var(--DesaturatedBlueText);
+}
+
+.textDark {
+	color: var(--WhiteBG);
+}
+
+.toggleDiv-dark {
+	background-image: var(--toggleDark);
+	justify-content: flex-start;
+}
+
+.toggle-dark {
+	background-color: var(--veryDarkBlueBG);
+}
+/* ----------------------------------------------------- */
+
+/* General Styling */
+.main {
+	margin: 0 auto;
+	width: 85%;
+	padding-block: 0.5rem;
+}
+
+.header {
+	position: relative;
+	padding-inline: 2rem;
+	/* transition: all ease-in-out 1s; */
+}
+
+.headerDark::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 35vh;
+	z-index: -1;
+	border-radius: 0 0 20px 20px;
+	background-color: var(--VeryDarkBlueTopBGPattern);
+}
+.headerLight::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 35vh;
+	z-index: -1;
+	border-radius: 0 0 20px 20px;
+	background-color: var(--VeryPaleBlueTopBGPattern);
+}
+
+.toggleSection {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.titleSection {
+	padding: 1.5rem 0;
+	border-bottom: 2px solid var(--DesaturatedBlueText);
+}
+
+.titleSection h1 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+.titleSection p {
+	font-weight: 700;
+}
+
+.toggleSection {
+	padding-block: 1rem 0.5rem;
+}
+.toggleSection p {
+	font-weight: 700;
+}
+
+.toggleDiv {
+	width: 50px;
+	height: 23px;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.toggle {
+	width: 18px;
+	height: 18px;
+	border-radius: 100px;
+	margin-inline: 3px;
+}
+
+.bigcard {
+	padding: 1.5rem 3rem;
+	width: 100%;
+	border-radius: 5px;
+	margin-block: 1.5rem;
+	margin-inline: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transition: background-color ease-in-out 1s;
+}
+
+.bg-border::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	border-radius: 5px 5px 0 0;
+}
+
+#fb::before {
+	background: var(--Facebook);
+}
+#tw::before {
+	background: var(--Twitter);
+}
+#ig::before {
+	background: var(--Instagram);
+}
+#yt::before {
+	background: var(--YouTube);
+}
+
+.bigcard-head {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.bigcard-head img,
+.percent img {
+	margin-right: 5px;
+}
+.bigcard-head span {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.bigcard-footer {
+	margin-top: 1.5rem;
+}
+.bigcard-footer span {
+	font-weight: 700;
+}
+
+.bigcard-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bigcard-footer img {
+	margin-right: 5px;
+}
+
+.bigcard-boldtext {
+	font-size: 3.5rem;
+	font-weight: 700;
+}
+
+.smallCard {
+	margin-block: 1rem;
+	padding: 1.5rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border-radius: 5px;
+	transition: background-color ease-in-out 1s;
+}
+
+.smallCard-head,
+.smallCard-mumber {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.smallCard-head p {
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.smallCard-mumber p {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.percent {
+	display: flex;
+	align-items: center;
+}
+.percent span {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.bigcard:hover,
+.smallCard:hover {
+	cursor: pointer;
+}
+
+@media screen and (min-width: 1440px) {
+	.header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-inline: 7rem;
+	}
+	.headerLight::after,
+	.headerDark::after {
+		height: 30vh;
+	}
+
+	.titleSection {
+		border-bottom: none;
+	}
+
+	.toggleSection {
+		gap: 15px;
+	}
+
+	.dashboard {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 30px;
+		margin-bottom: 15px;
+	}
+
+	.main h2 {
+		margin-bottom: 1.5rem;
+	}
+
+	.overview {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		row-gap: 30px;
+		column-gap: 30px;
+	}
+
+	.smallCard {
+		margin-block: 0;
+	}
+}
