@@ -5,9 +5,6 @@ export default function BigCards(props) {
 			className={`bigcard bg-border ${
 				props.mode ? "bigcard-light" : "bigcard-dark"
 			}`}
-			// style={{
-			// 	borderTop: props.borderTop,
-			// }}
 		>
 			<div className="bigcard-head">
 				<img src={props.platform} alt="social media icon" />
